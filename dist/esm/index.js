@@ -212,9 +212,40 @@ const buttonVariants = cva("inline-flex items-center justify-center whitespace-n
 const Button = React.forwardRef((_a, ref) => {
     var { className, variant, size, asChild = false } = _a, props = __rest(_a, ["className", "variant", "size", "asChild"]);
     const Comp = asChild ? $5e63c961fc1ce211$export$8c6ed5c666ac1360 : "button";
-    return (React.createElement(Comp, Object.assign({ style: { background: "red" }, className: cn(buttonVariants({ variant, size, className })), ref: ref }, props)));
+    return (React.createElement(Comp, Object.assign({ className: cn(buttonVariants({ variant, size, className })), ref: ref }, props)));
 });
 Button.displayName = "Button";
+
+const Card = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
+    return (React.createElement("div", Object.assign({ ref: ref, className: cn("rounded-xl border bg-card text-card-foreground shadow", className) }, props)));
+});
+Card.displayName = "Card";
+const CardHeader = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
+    return (React.createElement("div", Object.assign({ ref: ref, className: cn("flex flex-col space-y-1.5 p-6", className) }, props)));
+});
+CardHeader.displayName = "CardHeader";
+const CardTitle = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
+    return (React.createElement("h3", Object.assign({ ref: ref, className: cn("font-semibold leading-none tracking-tight", className) }, props)));
+});
+CardTitle.displayName = "CardTitle";
+const CardDescription = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
+    return (React.createElement("p", Object.assign({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
+});
+CardDescription.displayName = "CardDescription";
+const CardContent = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
+    return (React.createElement("div", Object.assign({ ref: ref, className: cn("p-6 pt-0", className) }, props)));
+});
+CardContent.displayName = "CardContent";
+const CardFooter = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
+    return (React.createElement("div", Object.assign({ ref: ref, className: cn("flex items-center p-6 pt-0", className) }, props)));
+});
+CardFooter.displayName = "CardFooter";
 
 function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else if("object"==typeof e)if(Array.isArray(e)){var o=e.length;for(t=0;t<o;t++)e[t]&&(f=r(e[t]))&&(n&&(n+=" "),n+=f);}else for(f in e)e[f]&&(n&&(n+=" "),n+=f);return n}function clsx(){for(var e,t,f=0,n="",o=arguments.length;f<o;f++)(e=arguments[f])&&(t=r(e))&&(n&&(n+=" "),n+=t);return n}
 
@@ -2738,5 +2769,5 @@ function cn(...inputs) {
     return twMerge(clsx(inputs));
 }
 
-export { Button, buttonVariants, cn };
+export { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, buttonVariants, cn };
 //# sourceMappingURL=index.js.map
